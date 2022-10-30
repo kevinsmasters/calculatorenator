@@ -1,7 +1,9 @@
-
+import CalcWrap from './components/CalcWrap';
 function App() {
   return (
-    <>This is App</>
+    <>
+      <CalcWrap />
+    </>
   );
 }
 
