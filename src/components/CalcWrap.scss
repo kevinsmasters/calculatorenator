@@ -1,0 +1,45 @@
+@mixin box-shadow($top, $left, $blur, $color)  {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+}
+#calcBox {
+    background-color: rgba(255,255,255,.4);
+    border-radius: 30px;
+    border: 1px solid black;
+    padding: 30px;
+    width: 400px;
+    margin: 0 auto;
+    &.birds {
+      background-image: url(https://massnervekit.a2hosted.com/massnerv/434695.jpg);
+      background-size: cover;
+    }
+    @include box-shadow(5px, 10px, 10px, rgba(0,0,0,.5));
+      
+    #logo { 
+      text-align: right;
+      img {
+        max-height: 50px;
+      }
+    }
+    #functionBox {
+      border-bottom: 1px solid white;
+      background: #999;
+      padding: 5px 15px;
+      color: black;
+      font-weight: bold;
+      font-family: 'Silkscreen', monospace;
+      font-size: 16px;
+      &::before {
+        content: ":> "
+      }
+    }
+    #display {
+      color: lime;
+      background: #000;
+      text-align: right;
+      padding: 5px 15px;
+      font-family: 'Silkscreen', monospace;
+      font-size: 20px;
+    }
+  }

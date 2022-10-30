@@ -1,4 +1,6 @@
 import {evaluate} from 'mathjs';
+
+import './CalcButton.scss';
 export const CalcButton =({button, setOperation, operation, display, setDisplay, setEgg})=> {
     const {label, id, size} = button;
     

@@ -1,0 +1,26 @@
+button {
+    width: 25%;
+    height: 50px;
+    background: rgba(0,0,0,.3);
+    border: 1px solid black;
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+    &.big {
+      width: 50%;
+    }
+    &.tall {
+      height: 100px;
+      margin-top: -50px;
+      position: relative;
+      top: -25px;
+    }
+    &:hover {
+      background: rgba(255,255,255,.5);
+      color: #888;
+    }
+    &:active {
+      background: olive;
+      color: #fff;
+    }
+}

@@ -1,5 +1,7 @@
 import {useState} from 'react';
 import { CalcButton } from './CalcButton';
+
+import './CalcWrap.scss';
 const theButtons = [
     {
       label: 'AC',
