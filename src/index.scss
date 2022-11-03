@@ -1,12 +1,15 @@
 
 body {
-  background-color: brown;
+  background-color: ghostwhite;
 }
 #root {
   display: flex;
   align-items: center;
   align-content: center;
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  border: 10px solid brown;
   height: 100vh;
   background-image: url(https://massnervekit.a2hosted.com/massnerv/dr-doofenshmirtz-phineas-and-ferb.jpeg);
 }
