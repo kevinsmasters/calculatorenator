@@ -1,18 +1,20 @@
 import {evaluate} from 'mathjs';
+
+import './CalcButton.scss';
 export const CalcButton =({button, setOperation, operation, display, setDisplay, setEgg})=> {
     const {label, id, size} = button;
     
     const calculate = (e) => {
       let pressed = e.target.value;
       
-      const regex = /[0-9\.]/;
+      const regex = /[0-9.]/;
       if(pressed.match(regex)) {
           
         // update display
-        if(display.indexOf('.') > 0 && pressed == '.') {
+        if(display.indexOf('.') > 0 && pressed === '.') {
           // omit double decimal points
         } else {
-          if(display == '0' || !display.match(regex) || operation.indexOf('=') > -1) {
+          if(display === '0' || !display.match(regex) || operation.indexOf('=') > -1) {
             // remove starter zero and previous operator
             setDisplay(pressed);
           } else {
@@ -27,19 +29,19 @@ export const CalcButton =({button, setOperation, operation, display, setDisplay,
             }
         }
         
-      } else if (pressed == 'AC') {
+      } else if (pressed === 'AC') {
         //console.log('clear');
         setEgg(false);
         setOperation('');
         setDisplay('0');
         
-      } else if (pressed == '=') {
+      } else if (pressed === '=') {
         let statement = operation;
         
         setOperation(operation + pressed);
         // convert back to string
         let total = evaluate(statement).toString();
-        if(total == '80085') {
+        if(total === '80085') {
           setEgg(true);
         } else {
           setEgg(false);
@@ -48,12 +50,12 @@ export const CalcButton =({button, setOperation, operation, display, setDisplay,
       } else {
         //console.log('oper')
         
-        if(display != '0') {
+        if(display !== '0') {
           setDisplay(pressed);
           // handle pressing operators in tandem
-          if(!display.match(regex) && pressed != '-') {
+          if(!display.match(regex) && pressed !== '-') {
              //console.log('last:', operation[operation.length-1]);
-            if(operation[operation.length-1] == '-' && !operation[operation.length-2].match(regex)) {
+            if(operation[operation.length-1] === '-' && !operation[operation.length-2].match(regex)) {
               //console.log('last was minus, before that was oper')
               let sliced = operation.slice(0,-1);
               sliced = sliced.slice(0,-1);

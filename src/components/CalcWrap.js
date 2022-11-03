@@ -1,5 +1,7 @@
-import {useState} from 'react';
+import {useEffect, useState} from 'react';
 import { CalcButton } from './CalcButton';
+
+import './CalcWrap.scss';
 const theButtons = [
     {
       label: 'AC',
@@ -78,6 +80,13 @@ function CalcWrap() {
     const [display, setDisplay] = useState('0');
     const [operation, setOperation] = useState('');
     const [egg, setEgg] = useState(false);
+
+    useEffect(() => {
+      if(egg) {
+        document.getElementById('beep').play();
+      }
+    }, [egg])
+    
     return (
         <div id="calcBox" className={egg ? 'birds' : null}>
             <div id="functionBox">{operation}</div>
@@ -94,6 +103,7 @@ function CalcWrap() {
            />
           )
         )}
+        <audio id="beep" src="https://massnervekit.a2hosted.com/massnerv/doofenshmirtz_theme.mp3"></audio> 
             </div>
             <div id="logo">
                 <img 
