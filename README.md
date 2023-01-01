@@ -1,3 +1,7 @@
+# Javascript Calculator Project
+
+This was originally an exercise for FreeCodeCamp's Front End Development Libraries certification. I migrated the project from CodePen into its own standalone React application.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
